@@ -1,0 +1,146 @@
+:root {
+  --var-text: var(--color-black);
+  --var-bg-gray: var(--color-light-grey);
+  --var-gray-reviews: #cccccc;
+  --var-more-light-gray-reviews: #2929291a;
+  --var-light-gray-reviews: #2929291d;
+  --var-bg-gray-reviews: #e4e5e6;
+}
+
+.dark .review,
+.dark .review-name {
+  color: var(--color-white);
+}
+
+.reviews-container {
+  position: relative;
+}
+
+.reviews-container {
+  height: auto;
+}
+
+.reviews-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.review-img-name {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#reviews .swiper-slide {
+  display: flex;
+  padding: 32px;
+  gap: 24px;
+  border-radius: 16px;
+  background: var(--var-bg-gray);
+  height: auto;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review {
+  font-weight: 300;
+  letter-spacing: 0.03125em;
+  height: auto;
+}
+
+.review-img {
+  border-radius: 24px;
+}
+
+.review-name {
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+.swiper-container {
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 16px;
+}
+
+.swiper-button-prev-new,
+.swiper-button-next-new {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--var-light-gray-reviews);
+  cursor: pointer;
+}
+
+.swiper-button-prev-new:hover,
+.swiper-button-next-new:hover {
+  border: 1px solid var(--var-light-gray-reviews);
+  background: var(--var-bg-gray-reviews);
+  border-radius: 8px;
+}
+
+.swiper-button-prev-new.swiper-button-disabled:hover,
+.swiper-button-next-new.swiper-button-disabled:hover {
+  border: 1px solid var(--var-light-gray-reviews);
+  background: none;
+}
+
+.icon-left {
+  stroke: #000;
+  fill: transparent;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  height: 20px;
+}
+
+.icon-right {
+  stroke: #000;
+  fill: transparent;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviews-title {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .reviews-title {
+    margin-bottom: 80px;
+  }
+
+  .swiper-button-prev-new,
+  .swiper-button-next-new {
+    height: 48px;
+    width: 48px;
+  }
+
+  .icon-left {
+    top: 10px;
+    left: 9px;
+  }
+
+  .icon-right {
+    top: 10px;
+    left: 4px;
+  }
+}

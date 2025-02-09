@@ -1,0 +1,144 @@
+:root {
+  --faq-secondary-title-color: var(--color-accent-green);
+  --accordion-divider-color: var(--color-light-grey);
+  --accordion-open-background: var(--color-light-accent);
+  --accordion-title-text-color: var(--color-black);
+  --accordion-content-text-color: var(--color-black);
+  --accordion-trigger-icon-color: var(--color-black);
+}
+
+.dark-theme {
+  --faq-title-color: var(--color-white);
+  --accordion-divider-color: var(--color-white);
+  --accordion-open-background: var(--color-dark-accent);
+  --accordion-title-text-color: var(--color-white);
+  --accordion-content-text-color: var(--color-white);
+  --accordion-trigger-icon-color: var(--color-white);
+}
+
+/* FAQ section styles */
+
+.faq-heading {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.faq-heading .secondary {
+  color: var(--faq-secondary-title-color);
+}
+
+/* Accordion styles */
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  padding: 28px 24px;
+  border: 0px solid var(--accordion-divider-color);
+  overflow: hidden;
+  transition:
+    background-color 0.4s ease-out,
+    border-radius 0.4s ease-out;
+}
+
+.accordion-item .accordion-content {
+  transition:
+    height 0.4s ease-out,
+    visibility 0.4s ease-out;
+}
+
+.accordion-item.is-open {
+  border-radius: 16px;
+  background: var(--accordion-open-background);
+}
+
+.accordion-item:not(.is-open):not(:first-child) {
+  border-top-width: 1px;
+}
+
+.accordion-item:not(.is-open):last-child {
+  border-bottom-width: 1px;
+}
+
+.accordion-item.is-open + .accordion-item {
+  border-top-width: 0;
+}
+
+.accordion-header-title {
+  text-align: start;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accordion-title-text-color);
+}
+
+.accordion-trigger-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.accordion-trigger-button-icon {
+  --icon-color: var(--accordion-trigger-icon-color);
+}
+
+.accordion-item.is-open .accordion-trigger-button-icon .down-icon,
+.accordion-item:not(.is-open) .accordion-trigger-button-icon .up-icon {
+  display: none;
+}
+
+.accordion-panel {
+  visibility: hidden;
+}
+
+.accordion-content {
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  padding-top: 24px;
+}
+
+.accordion-item.is-open .accordion-panel {
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .faq-heading {
+    margin-bottom: 60px;
+  }
+
+  .accordion-header-title {
+    max-width: 600px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .faq-container {
+    display: flex;
+    position: relative;
+  }
+
+  .faq-container::after {
+    content: "";
+    position: absolute;
+    width: 520.59px;
+    height: 406.24px;
+    background-image: url("../img/decor/decor-4.png");
+    background-size: contain;
+    top: 500px;
+    left: 0;
+  }
+
+  .faq-accordion {
+    max-width: 592px;
+    margin-top: 276px;
+  }
+}
